@@ -159,6 +159,12 @@ config CPU_FREQ_DEFAULT_GOV_MINMAX
 	  frequency jumps does by the governor. This is aimed at maximizing
 	  both perfomance and battery life.
 
+config CPU_FREQ_DEFAULT_GOV_SAVAGEDZEN
+	bool "SavagedZen"
+	select CPU_FREQ_GOV_SAVAGEDZEN
+	help
+	  Use the CPUFreq governor 'savagedzen' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -294,5 +300,12 @@ config CPU_FREQ_GOV_MINMAX
 	  the policy. The frequency is selected according to the load.
 
 	  If in doubt, say N.
+
+config CPU_FREQ_GOV_SAVAGEDZEN
+	tristate "'savagedzen' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	   'Savaged-Zen' - a "smartass" based governor
+	   If in doubt, say N.
 
 endif	# CPU_FREQ
