@@ -666,14 +666,14 @@ struct msm_camsensor_info {
 #define EXT_CFG_SP_CONTROL                 14
 #define EXT_CFG_CPU_CONTROL                15
 #define EXT_CFG_DTP_CONTROL                16
-#define EXT_CFG_SNAPSHOT_SIZE_CONTROL		17
-#define EXT_CFG_SET_CAPTURE_MODE 18
-#define EXT_CFG_SET_FLASH_MODE 19
-#define EXT_CFG_AUTO_CONTRAST_CONTROL 20
-#define EXT_CFG_JPEG_QUALITY_CONTROL 21
-#define EXT_CFG_ZOOM_CONTROL 22
-#define EXT_CFG_CAM_MODE_CONTROL 23
-#define EXT_CFG_PREVIEW_SIZE_CONTROL		24
+#define EXT_CFG_PREVIEW_SIZE_CONTROL		17
+#define EXT_CFG_CAM_MODE_CONTROL 18
+#define EXT_CFG_SNAPSHOT_SIZE_CONTROL		19
+#define EXT_CFG_SET_CAPTURE_MODE 20
+#define EXT_CFG_SET_FLASH_MODE 21
+#define EXT_CFG_AUTO_CONTRAST_CONTROL 22
+#define EXT_CFG_JPEG_QUALITY_CONTROL 23
+#define EXT_CFG_ZOOM_CONTROL 24
 #define EXT_CFG_FLASH_INFO		        25
 #define EXT_CFG_LUX_INFO		        26
 #define EXT_CFG_SENSOR_RESET		        27
@@ -690,7 +690,7 @@ struct msm_camsensor_info {
 #define EXT_CFG_AUTO_CONTRAST_OFF 1
 
 #define EXT_CFG_FRAME_AUTO			0
-#define EXT_CFG_FRAME_FIX_15		15
+#define EXT_CFG_FRAME_FIX_15		1
 #define EXT_CFG_FRAME_FIX_20		20
 #define EXT_CFG_FRAME_FIX_24		24
 #define EXT_CFG_FRAME_FIX_25		25
@@ -707,15 +707,15 @@ struct msm_camsensor_info {
 #define EXT_CFG_WB_FLUORESCENT             3
 #define EXT_CFG_WB_INCANDESCENT            4
 
-#define EXT_CFG_BR_STEP_P_4                8
-#define EXT_CFG_BR_STEP_P_3                7
-#define EXT_CFG_BR_STEP_P_2                6
-#define EXT_CFG_BR_STEP_P_1                5
-#define EXT_CFG_BR_STEP_0                  4
-#define EXT_CFG_BR_STEP_M_1                3
-#define EXT_CFG_BR_STEP_M_2                2
-#define EXT_CFG_BR_STEP_M_3                1
-#define EXT_CFG_BR_STEP_M_4                0
+#define EXT_CFG_BR_STEP_P_4                4
+#define EXT_CFG_BR_STEP_P_3                3
+#define EXT_CFG_BR_STEP_P_2                2
+#define EXT_CFG_BR_STEP_P_1                1
+#define EXT_CFG_BR_STEP_0                  0
+#define EXT_CFG_BR_STEP_M_1                255//-1
+#define EXT_CFG_BR_STEP_M_2                254//-2
+#define EXT_CFG_BR_STEP_M_3                253//-3
+#define EXT_CFG_BR_STEP_M_4                252//-4
 
 #define EXT_CFG_CR_STEP_P_2                4
 #define EXT_CFG_CR_STEP_P_1                3
