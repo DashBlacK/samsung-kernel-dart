@@ -1260,7 +1260,7 @@ sr200pc10_short_t sr200pc_cfg_scene_night1[] =
     {0x03, 0x20}, //Page 20
     {0x10, 0x1c}, // AE Off
 
-    //DARK Conditon1= NO_Max¸¸ ¼ÂÆÃ.
+    //DARK Conditon1= NO_Maxï½¸ï½¸ ï½¼ï¾‚ï¾†ï¾ƒ.
     {0x88, 0x0f}, //Expmax 3fps
     {0x89, 0x1b},
     {0x8a, 0x30},
@@ -1307,12 +1307,12 @@ sr200pc10_short_t sr200pc_cfg_scene_night2[] =
     {0x03, 0x20}, //Page 20
     {0x10, 0x1c}, // AE Off
 
-    //DARK Conditon1= NO_Max¸¸ ¼ÂÆÃ.
+    //DARK Conditon1= NO_Maxï½¸ï½¸ ï½¼ï¾‚ï¾†ï¾ƒ.
     {0x88, 0x0f}, //Expmax 3fps
     {0x89, 0x1b},
     {0x8a, 0x30},
 
-    //DARK Conditon2= YES_Normal ÇÔ²² ¼ÂÆÃ.
+    //DARK Conditon2= YES_Normal ï¾‡ï¾”ï½²ï½² ï½¼ï¾‚ï¾†ï¾ƒ.
     {0x83, 0x0f},	//Expnormal 3fps
     {0x84, 0x1b},
     {0x85, 0x30},
@@ -1769,5 +1769,6 @@ sr200pc10_short_t sr200pc10_cfg_iso_400[] =
 #define S5K4CA_QSVGA_REGS (sizeof(sr200pc10_reg_qsvga)/sizeof(sr200pc10_reg_qsvga[0]))
 
 #endif
+
 
 
