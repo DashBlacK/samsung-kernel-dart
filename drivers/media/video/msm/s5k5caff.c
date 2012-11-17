@@ -1491,7 +1491,7 @@ static long s5k5caff_set_sensor_mode(int mode)
 		}
 		else if(cur_lux < base_low)
 		{
-			if((mScene == EXT_CFG_NIGHTSHOT) ||(mScene == EXT_CFG_FIREWORK) )
+			if((mScene == EXT_CFG_SCENE_NIGHTSHOT) ||(mScene == EXT_CFG_SCENE_FIREWORK) )
 			{
 				PCAM_DEBUG("Night Snapshot!\n");
 				printk("Night Snapshot!\n");			
