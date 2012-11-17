@@ -50,7 +50,7 @@ typedef struct samsung_short_t{
 } s5k5caff_short_t;
 
 //latin_Cam : support antibanding for Latin
-#if 0 //shlee_temp #if defined(CONFIG_SAMSUNG_LTN_COMMON)		
+#if 1 //shlee_temp #if defined(CONFIG_SAMSUNG_LTN_COMMON)		
 s5k5caff_short_t s5k5caff_init_60hz[] =
 {
 //==============================================//
