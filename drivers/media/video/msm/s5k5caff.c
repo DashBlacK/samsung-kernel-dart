@@ -106,6 +106,16 @@ void sensor_DTP_control(char value);
 #endif
 
 
+//This is a temporary hack/solution. - DashBlacK
+S5K5CAFF_WRITE_LIST(s5k5caff_effect_off);
+S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_0);
+S5K5CAFF_WRITE_LIST(s5k5caff_saturation_0);
+S5K5CAFF_WRITE_LIST(s5k5caff_contrast_0);
+S5K5CAFF_WRITE_LIST(s5k5caff_wb_auto);
+S5K5CAFF_WRITE_LIST(s5k5caff_brightness_0);
+S5K5CAFF_WRITE_LIST(s5k5caff_iso_auto);
+S5K5CAFF_WRITE_LIST(s5k5caff_metering_normal);
+S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
 
 
 
