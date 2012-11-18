@@ -20,9 +20,7 @@
 	WUXGA: 1920 x 1200 
 	QXGA: 2048 x 1536
 ********************************************************************************************/
-
 /*  PCAM  */
-
 
 //#define PCAM_ENABLE_DEBUG // ON/OFF
 
@@ -37,8 +35,130 @@
 
 
 
+#define PCAM_AUTO_TUNNING               0
+#define PCAM_SDCARD_DETECT              1
+#define PCAM_GET_INFO		        2
+#define PCAM_FRAME_CONTROL              3
+#define PCAM_AF_CONTROL                 4
+#define PCAM_EFFECT_CONTROL             5
+#define PCAM_WB_CONTROL                 6
+#define PCAM_BR_CONTROL                 7
+#define PCAM_ISO_CONTROL                8
+#define PCAM_METERING_CONTROL           9
+#define PCAM_SCENE_CONTROL		10
+#define PCAM_AWB_AE_CONTROL		11
+#define PCAM_CR_CONTROL                 12
+#define PCAM_SA_CONTROL                 13
+#define PCAM_SP_CONTROL                 14
+#define PCAM_CPU_CONTROL                15
+#define PCAM_DTP_CONTROL                16
+#define PCAM_SET_PREVIEW_SIZE		17
+#define PCAM_GET_MODULE_STATUS		18
 
 
+#define PCAM_FRAME_AUTO			0
+#define PCAM_FRAME_FIX_15		1
+
+
+#define PCAM_EFFECT_NORMAL		0
+#define PCAM_EFFECT_NEGATIVE		1
+#define PCAM_EFFECT_MONO		2
+#define PCAM_EFFECT_SEPIA		3	
+
+
+#define PCAM_WB_AUTO                    0
+#define PCAM_WB_DAYLIGHT                1
+#define PCAM_WB_CLOUDY                  2
+#define PCAM_WB_FLUORESCENT             3
+#define PCAM_WB_INCANDESCENT            4
+
+
+#define PCAM_BR_STEP_P_4                4
+#define PCAM_BR_STEP_P_3                3
+#define PCAM_BR_STEP_P_2                2
+#define PCAM_BR_STEP_P_1                1
+#define PCAM_BR_STEP_0                  0
+#define PCAM_BR_STEP_M_1                255//-1
+#define PCAM_BR_STEP_M_2                254//-2
+#define PCAM_BR_STEP_M_3                253//-3
+#define PCAM_BR_STEP_M_4                252//-4
+
+#define PCAM_CR_STEP_P_2                4
+#define PCAM_CR_STEP_P_1                3
+#define PCAM_CR_STEP_0                  2
+#define PCAM_CR_STEP_M_1                1
+#define PCAM_CR_STEP_M_2                0
+
+#define PCAM_SA_STEP_P_2                4
+#define PCAM_SA_STEP_P_1                3
+#define PCAM_SA_STEP_0                  2
+#define PCAM_SA_STEP_M_1                1
+#define PCAM_SA_STEP_M_2                0
+
+#define PCAM_SP_STEP_P_2                4
+#define PCAM_SP_STEP_P_1                3
+#define PCAM_SP_STEP_0                  2
+#define PCAM_SP_STEP_M_1                1
+#define PCAM_SP_STEP_M_2                0
+
+
+
+
+#define PCAM_ISO_AUTO			0
+#define PCAM_ISO_50			1
+#define PCAM_ISO_100			2
+#define PCAM_ISO_200			3
+#define PCAM_ISO_400			4
+
+
+#define PCAM_METERING_NORMAL		0 //CENTER?
+#define PCAM_METERING_SPOT		1
+#define PCAM_METERING_CENTER		2
+
+
+#define PCAM_SCENE_OFF			0
+#define PCAM_SCENE_PORTRAIT		1
+#define PCAM_SCENE_LANDSCAPE		2
+#define PCAM_SCENE_SPORTS		3
+#define PCAM_SCENE_PARTY		4
+#define PCAM_SCENE_BEACH		5
+#define PCAM_SCENE_SUNSET		6
+#define PCAM_SCENE_DAWN			7
+#define PCAM_SCENE_FALL			8
+#define PCAM_SCENE_NIGHTSHOT		9
+#define PCAM_SCENE_BACKLIGHT		10
+#define PCAM_SCENE_FIREWORK		11
+#define PCAM_SCENE_TEXT			12
+#define PCAM_SCENE_CANDLE		13
+
+
+
+#define PCAM_AF_CHECK_STATUS		0
+#define PCAM_AF_OFF			1
+#define PCAM_AF_SET_NORMAL		2
+#define PCAM_AF_SET_MACRO		3
+#define PCAM_AF_DO			4
+#define PCAM_AF_SET_MANUAL	5
+
+
+
+#define PCAM_AF_PROGRESS                1
+#define PCAM_AF_SUCCESS                 2
+#define PCAM_AF_LOWCONF                 3 //Fail
+#define PCAM_AF_CANCELED                4
+#define PCAM_AF_TIMEOUT                 5
+
+
+#define PCAM_AWB_AE_LOCK		0
+#define PCAM_AWB_AE_UNLOCK		1
+
+
+#define PCAM_CPU_CONSERVATIVE		0
+#define PCAM_CPU_ONDEMAND		1
+#define PCAM_CPU_PERFORMANCE		2		
+
+#define PCAM_DTP_OFF			0
+#define PCAM_DTP_ON			1
 
 
                                                                   
@@ -4934,3 +5054,4 @@ s5k5caff_short_t s5k5caff_dtp_off[] =
 
 
 #endif
+

@@ -38,6 +38,7 @@
 
 //#define CONFIG_LOAD_FILE
 
+
 #define S5K5CAFF_BURST_WRITE_LIST(A)	s5k5caff_sensor_burst_write_list(A,ARRAY_SIZE(A),#A);
 #define S5K5CAFF_WRITE_LIST(A)		s5k5caff_sensor_write_list(A,ARRAY_SIZE(A),#A);
 
@@ -106,16 +107,6 @@ void sensor_DTP_control(char value);
 #endif
 
 
-//This is a temporary hack/solution. - DashBlacK
-S5K5CAFF_WRITE_LIST(s5k5caff_effect_off);
-S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_0);
-S5K5CAFF_WRITE_LIST(s5k5caff_saturation_0);
-S5K5CAFF_WRITE_LIST(s5k5caff_contrast_0);
-S5K5CAFF_WRITE_LIST(s5k5caff_wb_auto);
-S5K5CAFF_WRITE_LIST(s5k5caff_brightness_0);
-S5K5CAFF_WRITE_LIST(s5k5caff_iso_auto);
-S5K5CAFF_WRITE_LIST(s5k5caff_metering_normal);
-S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
 
 
 
@@ -301,26 +292,26 @@ void sensor_effect_control(char value)
 
 	switch(value)
 	{
-		case EXT_CFG_EFFECT_NORMAL :{
-		PCAM_DEBUG("EXT_CFG_EFFECT_NORMAL");
+		case PCAM_EFFECT_NORMAL :{
+		PCAM_DEBUG("PCAM_EFFECT_NORMAL");
 		S5K5CAFF_WRITE_LIST(s5k5caff_effect_off);
 		}
 		break;		
 
-		case EXT_CFG_EFFECT_NEGATIVE :{
-		PCAM_DEBUG("EXT_CFG_EFFECT_NEGATIVE");
+		case PCAM_EFFECT_NEGATIVE :{
+		PCAM_DEBUG("PCAM_EFFECT_NEGATIVE");
 		S5K5CAFF_WRITE_LIST(s5k5caff_effect_negative);
 		}
 		break;	
 		
-		case EXT_CFG_EFFECT_MONO :{
-		PCAM_DEBUG("EXT_CFG_EFFECT_MONO");
+		case PCAM_EFFECT_MONO :{
+		PCAM_DEBUG("PCAM_EFFECT_MONO");
 		S5K5CAFF_WRITE_LIST(s5k5caff_effect_mono);
 		}
 		break;	
 
-		case EXT_CFG_EFFECT_SEPIA :{
-		PCAM_DEBUG("EXT_CFG_EFFECT_SEPIA");
+		case PCAM_EFFECT_SEPIA :{
+		PCAM_DEBUG("PCAM_EFFECT_SEPIA");
 		S5K5CAFF_WRITE_LIST(s5k5caff_effect_sepia);
 		}
 		break;	
@@ -339,32 +330,32 @@ void sensor_whitebalance_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_WB_AUTO :{
-		PCAM_DEBUG("EXT_CFG_WB_AUTO");
+		case PCAM_WB_AUTO :{
+		PCAM_DEBUG("PCAM_WB_AUTO");
 		S5K5CAFF_WRITE_LIST(s5k5caff_wb_auto);
 		}
 		break;	
 
-		case EXT_CFG_WB_DAYLIGHT :{
-		PCAM_DEBUG("EXT_CFG_WB_DAYLIGHT");
+		case PCAM_WB_DAYLIGHT :{
+		PCAM_DEBUG("PCAM_WB_DAYLIGHT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_wb_daylight);
 		}
 		break;	
 
-		case EXT_CFG_WB_CLOUDY :{
-		PCAM_DEBUG("EXT_CFG_WB_CLOUDY");
+		case PCAM_WB_CLOUDY :{
+		PCAM_DEBUG("PCAM_WB_CLOUDY");
 		S5K5CAFF_WRITE_LIST(s5k5caff_wb_cloudy);
 		}
 		break;	
 
-		case EXT_CFG_WB_FLUORESCENT :{
-		PCAM_DEBUG("EXT_CFG_WB_FLUORESCENT");
+		case PCAM_WB_FLUORESCENT :{
+		PCAM_DEBUG("PCAM_WB_FLUORESCENT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_wb_fluorescent);
 		}
 		break;	
 		
-		case EXT_CFG_WB_INCANDESCENT :{
-		PCAM_DEBUG("EXT_CFG_WB_INCANDESCENT");
+		case PCAM_WB_INCANDESCENT :{
+		PCAM_DEBUG("PCAM_WB_INCANDESCENT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_wb_incandescent);
 		}
 		break;	
@@ -383,56 +374,56 @@ void sensor_brightness_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_BR_STEP_P_4 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_P_4");
+		case PCAM_BR_STEP_P_4 :{
+		PCAM_DEBUG("PCAM_BR_STEP_P_4");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_p_4);
 		}
 		break;
 		
-		case EXT_CFG_BR_STEP_P_3 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_P_3");
+		case PCAM_BR_STEP_P_3 :{
+		PCAM_DEBUG("PCAM_BR_STEP_P_3");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_p_3);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_P_2 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_P_2");
+		case PCAM_BR_STEP_P_2 :{
+		PCAM_DEBUG("PCAM_BR_STEP_P_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_p_2);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_P_1 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_P_1");
+		case PCAM_BR_STEP_P_1 :{
+		PCAM_DEBUG("PCAM_BR_STEP_P_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_p_1);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_0 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_0");
+		case PCAM_BR_STEP_0 :{
+		PCAM_DEBUG("PCAM_BR_STEP_0");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_0);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_M_1 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_M_1");
+		case PCAM_BR_STEP_M_1 :{
+		PCAM_DEBUG("PCAM_BR_STEP_M_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_m_1);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_M_2 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_M_2");
+		case PCAM_BR_STEP_M_2 :{
+		PCAM_DEBUG("PCAM_BR_STEP_M_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_m_2);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_M_3 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_M_3");
+		case PCAM_BR_STEP_M_3 :{
+		PCAM_DEBUG("PCAM_BR_STEP_M_3");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_m_3);
 		}
 		break;
 
-		case EXT_CFG_BR_STEP_M_4 :{
-		PCAM_DEBUG("EXT_CFG_BR_STEP_M_4");
+		case PCAM_BR_STEP_M_4 :{
+		PCAM_DEBUG("PCAM_BR_STEP_M_4");
 		S5K5CAFF_WRITE_LIST(s5k5caff_brightness_m_4);
 		}
 		break;
@@ -452,32 +443,32 @@ void sensor_iso_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_ISO_AUTO :{
-		PCAM_DEBUG("EXT_CFG_ISO_AUTO");
+		case PCAM_ISO_AUTO :{
+		PCAM_DEBUG("PCAM_ISO_AUTO");
 		S5K5CAFF_WRITE_LIST(s5k5caff_iso_auto);
 		}
 		break;
 
-		case EXT_CFG_ISO_50 :{
-		PCAM_DEBUG("EXT_CFG_ISO_50");
+		case PCAM_ISO_50 :{
+		PCAM_DEBUG("PCAM_ISO_50");
 		S5K5CAFF_WRITE_LIST(s5k5caff_iso_50);
 		}
 		break;
 
-		case EXT_CFG_ISO_100 :{
-		PCAM_DEBUG("EXT_CFG_ISO_100");
+		case PCAM_ISO_100 :{
+		PCAM_DEBUG("PCAM_ISO_100");
 		S5K5CAFF_WRITE_LIST(s5k5caff_iso_100);
 		}
 		break;
 
-		case EXT_CFG_ISO_200 :{
-		PCAM_DEBUG("EXT_CFG_ISO_200");
+		case PCAM_ISO_200 :{
+		PCAM_DEBUG("PCAM_ISO_200");
 		S5K5CAFF_WRITE_LIST(s5k5caff_iso_200);
 		}
 		break;
 
-		case EXT_CFG_ISO_400 :{
-		PCAM_DEBUG("EXT_CFG_ISO_400");
+		case PCAM_ISO_400 :{
+		PCAM_DEBUG("PCAM_ISO_400");
 		S5K5CAFF_WRITE_LIST(s5k5caff_iso_400);
 		}
 		break;
@@ -496,20 +487,20 @@ void sensor_metering_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_METERING_NORMAL :{
-		PCAM_DEBUG("EXT_CFG_METERING_NORMAL");
+		case PCAM_METERING_NORMAL :{
+		PCAM_DEBUG("PCAM_METERING_NORMAL");
 		S5K5CAFF_WRITE_LIST(s5k5caff_metering_normal);
 		}
 		break;
 		
-		case EXT_CFG_METERING_SPOT :{
-		PCAM_DEBUG("EXT_CFG_METERING_SPOT");
+		case PCAM_METERING_SPOT :{
+		PCAM_DEBUG("PCAM_METERING_SPOT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_metering_spot);
 		}
 		break;
 
-		case EXT_CFG_METERING_CENTER :{
-		PCAM_DEBUG("EXT_CFG_METERING_CENTER");
+		case PCAM_METERING_CENTER :{
+		PCAM_DEBUG("PCAM_METERING_CENTER");
 		S5K5CAFF_WRITE_LIST(s5k5caff_metering_center);
 		}
 		break;
@@ -527,99 +518,99 @@ void sensor_scene_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_SCENE_OFF :{
-		PCAM_DEBUG("EXT_CFG_SCENE_OFF");
+		case PCAM_SCENE_OFF :{
+		PCAM_DEBUG("PCAM_SCENE_OFF");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
 		}
 		break;
 
-		case EXT_CFG_SCENE_PORTRAIT :{
+		case PCAM_SCENE_PORTRAIT :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
-		PCAM_DEBUG("EXT_CFG_SCENE_PORTRAIT");
+		PCAM_DEBUG("PCAM_SCENE_PORTRAIT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_portrait);
 		}
 		break;
 
-		case EXT_CFG_SCENE_LANDSCAPE :{
+		case PCAM_SCENE_LANDSCAPE :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
-		PCAM_DEBUG("EXT_CFG_SCENE_LANDSCAPE");
+		PCAM_DEBUG("PCAM_SCENE_LANDSCAPE");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_landscape);
 		}
 		break;
 
-		case EXT_CFG_SCENE_SPORTS :{
+		case PCAM_SCENE_SPORTS :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
-		PCAM_DEBUG("EXT_CFG_SCENE_SPORTS");
+		PCAM_DEBUG("PCAM_SCENE_SPORTS");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_sports);
 		}
 		break;
 
-		case EXT_CFG_SCENE_PARTY :{
+		case PCAM_SCENE_PARTY :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);		
-		PCAM_DEBUG("EXT_CFG_SCENE_PARTY");
+		PCAM_DEBUG("PCAM_SCENE_PARTY");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_party);			
 		}
 		break;
 
-		case EXT_CFG_SCENE_BEACH :{
+		case PCAM_SCENE_BEACH :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);		
-		PCAM_DEBUG("EXT_CFG_SCENE_BEACH");
+		PCAM_DEBUG("PCAM_SCENE_BEACH");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_beach);
 		}
 		break;
 
-		case EXT_CFG_SCENE_SUNSET :{
+		case PCAM_SCENE_SUNSET :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);	
-		PCAM_DEBUG("EXT_CFG_SCENE_SUNSET");
+		PCAM_DEBUG("PCAM_SCENE_SUNSET");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_sunset);
 		}
 		break;
 		
-		case EXT_CFG_SCENE_DAWN :{
+		case PCAM_SCENE_DAWN :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);			
-		PCAM_DEBUG("EXT_CFG_SCENE_DAWN");
+		PCAM_DEBUG("PCAM_SCENE_DAWN");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_dawn);	
 		}
 		break;
 
-		case EXT_CFG_SCENE_FALL :{
+		case PCAM_SCENE_FALL :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);						
-		PCAM_DEBUG("EXT_CFG_SCENE_FALL");
+		PCAM_DEBUG("PCAM_SCENE_FALL");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_fall);		
 		}
 		break;
 
-		case EXT_CFG_SCENE_NIGHTSHOT :{
+		case PCAM_SCENE_NIGHTSHOT :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);
-		PCAM_DEBUG("EXT_CFG_SCENE_NIGHTSHOT");
+		PCAM_DEBUG("PCAM_SCENE_NIGHTSHOT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_nightshot);			
 		}
 		break;
 
-		case EXT_CFG_SCENE_BACKLIGHT :{
+		case PCAM_SCENE_BACKLIGHT :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);	
-		PCAM_DEBUG("EXT_CFG_SCENE_BACKLIGHT");
+		PCAM_DEBUG("PCAM_SCENE_BACKLIGHT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_backlight);
 		}
 		break;
 
-		case EXT_CFG_SCENE_FIREWORK :{
+		case PCAM_SCENE_FIREWORK :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);		
-		PCAM_DEBUG("EXT_CFG_SCENE_FIREWORK");
+		PCAM_DEBUG("PCAM_SCENE_FIREWORK");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_firework);				
 		}
 		break;
 
-		case EXT_CFG_SCENE_TEXT :{
+		case PCAM_SCENE_TEXT :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);					
-		PCAM_DEBUG("EXT_CFG_SCENE_TEXT");
+		PCAM_DEBUG("PCAM_SCENE_TEXT");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_text);
 		}
 		break;
 
-		case EXT_CFG_SCENE_CANDLE :{
+		case PCAM_SCENE_CANDLE :{
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_off);							
-		PCAM_DEBUG("EXT_CFG_SCENE_CANDLE");
+		PCAM_DEBUG("PCAM_SCENE_CANDLE");
 		S5K5CAFF_WRITE_LIST(s5k5caff_scene_candle);	
 		}
 		break;
@@ -636,38 +627,38 @@ void sensor_contrast_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_CR_STEP_M_2 :{
-		PCAM_DEBUG("EXT_CFG_CR_STEP_M_2");
+		case PCAM_CR_STEP_M_2 :{
+		PCAM_DEBUG("PCAM_CR_STEP_M_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_contrast_m_2);
 		}
 		break;
 
-		case EXT_CFG_CR_STEP_M_1 :{
-		PCAM_DEBUG("EXT_CFG_CR_STEP_M_1");
+		case PCAM_CR_STEP_M_1 :{
+		PCAM_DEBUG("PCAM_CR_STEP_M_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_contrast_m_1);	
 		}
 		break;
 
-		case EXT_CFG_CR_STEP_0 :{
-		PCAM_DEBUG("EXT_CFG_CR_STEP_0");
+		case PCAM_CR_STEP_0 :{
+		PCAM_DEBUG("PCAM_CR_STEP_0");
 		S5K5CAFF_WRITE_LIST(s5k5caff_contrast_0);
 		}
 		break;
 
-		case EXT_CFG_CR_STEP_P_1 :{
-		PCAM_DEBUG("EXT_CFG_CR_STEP_P_1");
+		case PCAM_CR_STEP_P_1 :{
+		PCAM_DEBUG("PCAM_CR_STEP_P_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_contrast_p_1);
 		}
 		break;
 
-		case EXT_CFG_CR_STEP_P_2 :{
-		PCAM_DEBUG("EXT_CFG_CR_STEP_P_2");
+		case PCAM_CR_STEP_P_2 :{
+		PCAM_DEBUG("PCAM_CR_STEP_P_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_contrast_p_2);
 		}
 		break;
 
 		default :{
-			printk("<=PCAM=> Unexpected EXT_CFG_CR_CONTROL mode : %d\n",  value);
+			printk("<=PCAM=> Unexpected PCAM_CR_CONTROL mode : %d\n",  value);
 		}
 		break;												
 	}
@@ -678,38 +669,38 @@ void sensor_saturation_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_SA_STEP_M_2 :{
-		PCAM_DEBUG("EXT_CFG_SA_STEP_M_2");
+		case PCAM_SA_STEP_M_2 :{
+		PCAM_DEBUG("PCAM_SA_STEP_M_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_saturation_m_2);
 		}
 		break;
 
-		case EXT_CFG_SA_STEP_M_1 :{
-		PCAM_DEBUG("EXT_CFG_SA_STEP_M_1");
+		case PCAM_SA_STEP_M_1 :{
+		PCAM_DEBUG("PCAM_SA_STEP_M_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_saturation_m_1);		
 		}
 		break;
 
-		case EXT_CFG_SA_STEP_0 :{
-		PCAM_DEBUG("EXT_CFG_SA_STEP_0");
+		case PCAM_SA_STEP_0 :{
+		PCAM_DEBUG("PCAM_SA_STEP_0");
 		S5K5CAFF_WRITE_LIST(s5k5caff_saturation_0);
 		}
 		break;
 
-		case EXT_CFG_SA_STEP_P_1 :{
-		PCAM_DEBUG("EXT_CFG_SA_STEP_P_1");
+		case PCAM_SA_STEP_P_1 :{
+		PCAM_DEBUG("PCAM_SA_STEP_P_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_saturation_p_1);
 		}
 		break;
 
-		case EXT_CFG_SA_STEP_P_2 :{
-		PCAM_DEBUG("EXT_CFG_SA_STEP_P_2");
+		case PCAM_SA_STEP_P_2 :{
+		PCAM_DEBUG("PCAM_SA_STEP_P_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_saturation_p_2);
 		}
 		break;
 
 		default :{
-			printk("<=PCAM=> Unexpected EXT_CFG_SA_CONTROL mode : %d\n",  value);
+			printk("<=PCAM=> Unexpected PCAM_SA_CONTROL mode : %d\n",  value);
 		}
 		break;					
 	}
@@ -721,38 +712,38 @@ void sensor_sharpness_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_SP_STEP_M_2 :{
-		PCAM_DEBUG("EXT_CFG_SP_STEP_M_2");
+		case PCAM_SP_STEP_M_2 :{
+		PCAM_DEBUG("PCAM_SP_STEP_M_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_m_2);
 		}
 		break;
 
-		case EXT_CFG_SP_STEP_M_1 :{
-		PCAM_DEBUG("EXT_CFG_SP_STEP_M_1");
+		case PCAM_SP_STEP_M_1 :{
+		PCAM_DEBUG("PCAM_SP_STEP_M_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_m_1);		
 		}
 		break;
 
-		case EXT_CFG_SP_STEP_0 :{
-		PCAM_DEBUG("EXT_CFG_SP_STEP_0");
+		case PCAM_SP_STEP_0 :{
+		PCAM_DEBUG("PCAM_SP_STEP_0");
 		S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_0);	
 		}
 		break;
 
-		case EXT_CFG_SP_STEP_P_1 :{
-		PCAM_DEBUG("EXT_CFG_SP_STEP_P_1");
+		case PCAM_SP_STEP_P_1 :{
+		PCAM_DEBUG("PCAM_SP_STEP_P_1");
 		S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_p_1);			
 		}
 		break;
 
-		case EXT_CFG_SP_STEP_P_2 :{
-		PCAM_DEBUG("EXT_CFG_SP_STEP_P_2");
+		case PCAM_SP_STEP_P_2 :{
+		PCAM_DEBUG("PCAM_SP_STEP_P_2");
 		S5K5CAFF_WRITE_LIST(s5k5caff_sharpness_p_2);			
 		}
 		break;
 
 		default :{
-			printk("<=PCAM=> Unexpected EXT_CFG_SP_CONTROL mode : %d\n",  value);
+			printk("<=PCAM=> Unexpected PCAM_SP_CONTROL mode : %d\n",  value);
 		}
 		break;					
 	}
@@ -764,23 +755,23 @@ int sensor_af_control(char value)
 	switch(value)
 	{
 
-		case EXT_CFG_AF_CHECK_STATUS :{
+		case PCAM_AF_CHECK_STATUS :{
 		}
 		break;
 		
-		case EXT_CFG_AF_OFF :{
+		case PCAM_AF_OFF :{
 		}
 		break;
 
-		case EXT_CFG_AF_SET_NORMAL :{
+		case PCAM_AF_SET_NORMAL :{
 		}
 		break;
 
-		case EXT_CFG_AF_SET_MACRO :{
+		case PCAM_AF_SET_MACRO :{
 		}
 		break;
 
-		case EXT_CFG_AF_DO :{
+		case PCAM_AF_DO :{
 		}
 		break;
 
@@ -801,13 +792,13 @@ void sensor_DTP_control(char value)
 {
 	switch(value)
 	{
-		case EXT_CFG_DTP_OFF:{
+		case PCAM_DTP_OFF:{
 		PCAM_DEBUG("DTP OFF");
 		S5K5CAFF_WRITE_LIST(s5k5caff_dtp_off);
 		}
 		break;
 
-		case EXT_CFG_DTP_ON:{
+		case PCAM_DTP_ON:{
 		PCAM_DEBUG("DTP ON");
 		S5K5CAFF_WRITE_LIST(s5k5caff_dtp_on);
 		}
@@ -845,14 +836,14 @@ void sensor_rough_control(void __user *arg)
 
 	switch(ctrl_info.mode)
 	{
-		case EXT_CFG_AUTO_TUNNING:
+		case PCAM_AUTO_TUNNING:
 		break;
 
 		
-		case EXT_CFG_SDCARD_DETECT:
+		case PCAM_SDCARD_DETECT:
 		break;
 
-		case EXT_CFG_GET_INFO:{
+		case PCAM_GET_INFO:{
 			unsigned short lsb, msb, rough_iso;					
 			s5k5caff_sensor_write(0xFCFC, 0xD000);					
 			s5k5caff_sensor_write(0x002C, 0x7000);
@@ -869,24 +860,24 @@ void sensor_rough_control(void __user *arg)
 		}
 		break;
 
-		case EXT_CFG_FRAME_CONTROL:
+		case PCAM_FRAME_CONTROL:
 		{
 			switch(ctrl_info.value_1)
 			{
 
-				case EXT_CFG_FRAME_AUTO :{
-				PCAM_DEBUG("EXT_CFG_FRAME_AUTO");		
+				case PCAM_FRAME_AUTO :{
+				PCAM_DEBUG("PCAM_FRAME_AUTO");		
 				}					
 				break;
 				
-				case EXT_CFG_FRAME_FIX_15 :{
-				PCAM_DEBUG("EXT_CFG_FRAME_FIX_15");
+				case PCAM_FRAME_FIX_15 :{
+				PCAM_DEBUG("PCAM_FRAME_FIX_15");
 				S5K5CAFF_WRITE_LIST(s5k5caff_fps_15fix);		
 				}
 				break;
 
 				default :{
-					printk("<=PCAM=> Unexpected EXT_CFG_FRAME_CONTROL mode : %d\n", ctrl_info.value_1);
+					printk("<=PCAM=> Unexpected PCAM_FRAME_CONTROL mode : %d\n", ctrl_info.value_1);
 				}
 				break;				
 			
@@ -895,7 +886,7 @@ void sensor_rough_control(void __user *arg)
 		break;
 
 
-		case EXT_CFG_AF_CONTROL:
+		case PCAM_AF_CONTROL:
 		{
 			mAfMode= ctrl_info.value_1;
 			ctrl_info.value_3 = sensor_af_control(mAfMode);
@@ -903,36 +894,36 @@ void sensor_rough_control(void __user *arg)
 		break;
 
 		
-		case EXT_CFG_EFFECT_CONTROL:
+		case PCAM_EFFECT_CONTROL:
 		{
 			mEffect = ctrl_info.value_1;
 			sensor_effect_control(mEffect);
 				
 			
-		}// end of EXT_CFG_EFFECT_CONTROL
+		}// end of PCAM_EFFECT_CONTROL
 		break;
 
 
-		case EXT_CFG_WB_CONTROL:
+		case PCAM_WB_CONTROL:
 		{
 			mWhiteBalance = ctrl_info.value_1;
 			sensor_whitebalance_control(mWhiteBalance);
 			
 
-		}//end of EXT_CFG_WB_CONTROL
+		}//end of PCAM_WB_CONTROL
 		break;
 
 
-		case EXT_CFG_BR_CONTROL:
+		case PCAM_BR_CONTROL:
 		{
 			mBrightness = ctrl_info.value_1;
 			if(mInit)
 				sensor_brightness_control(mBrightness);
 			
-		}//end of EXT_CFG_BR_CONTROL
+		}//end of PCAM_BR_CONTROL
 		break;
 
-		case EXT_CFG_ISO_CONTROL:
+		case PCAM_ISO_CONTROL:
 		{
 			mISO = ctrl_info.value_1;
 			sensor_iso_control(mISO);
@@ -941,7 +932,7 @@ void sensor_rough_control(void __user *arg)
 		break;
 
 
-		case EXT_CFG_METERING_CONTROL:
+		case PCAM_METERING_CONTROL:
 		{
 			mAutoExposure = ctrl_info.value_1;
 			sensor_metering_control(mAutoExposure);
@@ -950,7 +941,7 @@ void sensor_rough_control(void __user *arg)
 		break;
 
 
-		case EXT_CFG_SCENE_CONTROL:
+		case PCAM_SCENE_CONTROL:
 		{
 			mScene = ctrl_info.value_1;
 			sensor_scene_control(mScene);
@@ -959,21 +950,20 @@ void sensor_rough_control(void __user *arg)
 		break;
 
 
-		case EXT_CFG_AE_AWB_CONTROL:
+		case PCAM_AWB_AE_CONTROL:
 		{
-			/*
-			printk("<=PCAM=> EXT_CFG_AE_AWB_CONTROL skip~~~\n");
-			*/	
+			printk("<=PCAM=> PCAM_AWB_AE_CONTROL skip~~~\n");
+			/*	
 			switch(ctrl_info.value_1)
 			{
-				case EXT_CFG_AE_LOCK :{
-				PCAM_DEBUG("EXT_CFG_AE_LOCK");
+				case PCAM_AWB_AE_LOCK :{
+				PCAM_DEBUG("PCAM_AWB_AE_LOCK");
 				S5K5CAFF_WRITE_LIST(s5k5caff_awb_ae_lock);
 				}
 				break;
 
-				case EXT_CFG_AE_UNLOCK :{
-				PCAM_DEBUG("EXT_CFG_AE_UNLOCK");
+				case PCAM_AWB_AE_UNLOCK :{
+				PCAM_DEBUG("PCAM_AWB_AE_UNLOCK");
 					
 				S5K5CAFF_WRITE_LIST(s5k5caff_awb_ae_unlock);
 				}
@@ -985,10 +975,11 @@ void sensor_rough_control(void __user *arg)
 				break;						
 				
 			}
+			*/
 		}
 		break;
 			
-		case EXT_CFG_CR_CONTROL:
+		case PCAM_CR_CONTROL:
 		{
 			mContrast = ctrl_info.value_1;
 			if(mInit)
@@ -998,7 +989,7 @@ void sensor_rough_control(void __user *arg)
 		break;
 			
 
-		case EXT_CFG_SA_CONTROL:
+		case PCAM_SA_CONTROL:
 		{
 			mSaturation = ctrl_info.value_1;
 			if(mInit)
@@ -1009,7 +1000,7 @@ void sensor_rough_control(void __user *arg)
 
 		
 
-		case EXT_CFG_SP_CONTROL:
+		case PCAM_SP_CONTROL:
 		{
 			mSharpness = ctrl_info.value_1;
 			if(mInit)
@@ -1018,24 +1009,24 @@ void sensor_rough_control(void __user *arg)
 		}
 		break;
 
-		case EXT_CFG_CPU_CONTROL:
+		case PCAM_CPU_CONTROL:
 		{
 
 			switch(ctrl_info.value_1)
 			{
-				case EXT_CFG_CPU_CONSERVATIVE:{
+				case PCAM_CPU_CONSERVATIVE:{
 				PCAM_DEBUG("now conservative");
 				cpufreq_direct_set_policy(0, "conservative");
 				}
 				break;
 
-				case EXT_CFG_CPU_ONDEMAND:{
+				case PCAM_CPU_ONDEMAND:{
 				PCAM_DEBUG("now ondemand");
 				cpufreq_direct_set_policy(0, "ondemand");
 				}
 				break;	
 
-				case EXT_CFG_CPU_PERFORMANCE:{
+				case PCAM_CPU_PERFORMANCE:{
 				PCAM_DEBUG("now performance");
 				cpufreq_direct_set_policy(0, "performance");
 				}
@@ -1049,7 +1040,7 @@ void sensor_rough_control(void __user *arg)
 		}
 		break;
 
-		case EXT_CFG_DTP_CONTROL:
+		case PCAM_DTP_CONTROL:
 		{
 			if(mInit == 0)
 			{
@@ -1079,14 +1070,14 @@ void sensor_rough_control(void __user *arg)
 		break;
 
 /*
-		case EXT_CFG_PREVIEW_SIZE_CONTROL:
+		case PCAM_SET_PREVIEW_SIZE:
 		{
 			mMode = ctrl_info.value_1;
 		}
 		break;
 */
 
-		case EXT_CFG_CAM_MODE_CONTROL:
+		case PCAM_GET_MODULE_STATUS:
 		{
 			unsigned short	id = 0; //CAM FOR FW
 			//ctrl_info.value_3 = gpio_get_value(0);
@@ -1097,7 +1088,7 @@ void sensor_rough_control(void __user *arg)
 			
 			ctrl_info.value_3 = id;
 		
-			printk("<=PCAM=> EXT_CFG_CAM_MODE_CONTROL : %x\n", id);
+			printk("<=PCAM=> PCAM_GET_MODULE_STATUS : %x\n", id);
 			printk("<=PCAM=> PINON/OFF : %d\n", gpio_get_value(0));
 
 		}
@@ -1257,25 +1248,26 @@ static long s5k5caff_set_effect(int mode, int effect)
 	switch (effect) {
 	case CAMERA_EFFECT_OFF: {
 	PCAM_DEBUG("CAMERA_EFFECT_OFF");
-	S5K5CAFF_WRITE_LIST(s5k5caff_effect_off);
+	}
+			break;
+
+	case CAMERA_EFFECT_MONO: {
+	PCAM_DEBUG("CAMERA_EFFECT_MONO");
 	}
 		break;
 
 	case CAMERA_EFFECT_NEGATIVE: {
 	PCAM_DEBUG("CAMERA_EFFECT_NEGATIVE");
-	S5K5CAFF_WRITE_LIST(s5k5caff_effect_negative);
 	}
 		break;
 
-	case CAMERA_EFFECT_MONO: {
-	PCAM_DEBUG("CAMERA_EFFECT_MONO");
-	S5K5CAFF_WRITE_LIST(s5k5caff_effect_mono);
+	case CAMERA_EFFECT_SOLARIZE: {
+	PCAM_DEBUG("CAMERA_EFFECT_SOLARIZE");
 	}
 		break;
 
 	case CAMERA_EFFECT_SEPIA: {
 	PCAM_DEBUG("CAMERA_EFFECT_SEPIA");
-	S5K5CAFF_WRITE_LIST(s5k5caff_effect_sepia);
 	}
 		break;
 
@@ -1380,7 +1372,7 @@ static long s5k5caff_set_sensor_mode(int mode)
 		*/
 
 
-		if((mScene == EXT_CFG_SCENE_NIGHTSHOT) ||(mScene == EXT_CFG_SCENE_FIREWORK) )
+		if((mScene == PCAM_SCENE_NIGHTSHOT) ||(mScene == PCAM_SCENE_FIREWORK) )
 		{
 			for(cnt=0; cnt<1200; cnt++)
 			{
@@ -1409,20 +1401,20 @@ static long s5k5caff_set_sensor_mode(int mode)
 		}
 
 
-		//if(mScene == EXT_CFG_SCENE_OFF)
+		//if(mScene == PCAM_SCENE_OFF)
 			sensor_effect_control(mEffect);
 
 
-		if((set_init0 ==1) &&(mScene == EXT_CFG_SCENE_OFF))
+		if((set_init0 ==1) &&(mScene == PCAM_SCENE_OFF))
 			printk("<=PCAM=> skip scene off\n");
 		else
 			sensor_scene_control(mScene);
 
 
-		if(mScene != EXT_CFG_SCENE_SPORTS && mScene != EXT_CFG_SCENE_NIGHTSHOT)
+		if(mScene != PCAM_SCENE_SPORTS && mScene != PCAM_SCENE_NIGHTSHOT)
 			sensor_iso_control(mISO);
 
-		//if(mScene == EXT_CFG_SCENE_OFF)
+		//if(mScene == PCAM_SCENE_OFF)
 		//{
 		    sensor_brightness_control(mBrightness);
 		    sensor_metering_control(mAutoExposure);
@@ -1430,7 +1422,7 @@ static long s5k5caff_set_sensor_mode(int mode)
 		    sensor_saturation_control(mSaturation);
 		    sensor_sharpness_control(mSharpness);
 		
-			if((set_init0 ==1) &&(mWhiteBalance == EXT_CFG_WB_AUTO))
+			if((set_init0 ==1) &&(mWhiteBalance == PCAM_WB_AUTO))
 				printk("<=PCAM=> awb aleady done!\n");
 			else
 				sensor_whitebalance_control(mWhiteBalance);
@@ -1501,7 +1493,7 @@ static long s5k5caff_set_sensor_mode(int mode)
 		}
 		else if(cur_lux < base_low)
 		{
-			if((mScene == EXT_CFG_SCENE_NIGHTSHOT) ||(mScene == EXT_CFG_SCENE_FIREWORK) )
+			if((mScene == PCAM_SCENE_NIGHTSHOT) ||(mScene == PCAM_SCENE_FIREWORK) )
 			{
 				PCAM_DEBUG("Night Snapshot!\n");
 				printk("Night Snapshot!\n");			
@@ -1970,3 +1962,4 @@ static int __init s5k5caff_init(void)
 }
 
 module_init(s5k5caff_init);
+
